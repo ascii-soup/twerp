@@ -62,4 +62,14 @@ class ReaderTest extends \PHPUnit_Framework_TestCase
         $reader->next(); // t
         assertThat($reader->next(), is(""));
     }
+
+    /**
+     * @test
+     */
+    function current_returns_the_current_character()
+    {
+        $reader = new Reader("Hello World");
+        $reader->next();
+        assertThat($reader->current(), is('H'));
+    }
 }
